@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trang HTML Xử Lý GET Request</title>
+  <script>
+    function handleRequest() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hbhValue = urlParams.get('HBH');
+
+      const response = { HBH: hbhValue };
+      const jsonResponse = JSON.stringify(response);
+
+      document.getElementById('result').innerHTML = jsonResponse;
+    }
+  </script>
+</head>
+<body onload="handleRequest()">
+  <div id="result"></div>
+</body>
+</html>
